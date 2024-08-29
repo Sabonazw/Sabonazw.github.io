@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "schools",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Latitude": -18.56805556, "Longitude": 27.01666667, "Name": "Nechilibi High", "Type": "School", "Activity": "80 students are on the sponsorship program" }, "geometry": { "type": "Point", "coordinates": [ 27.019618638762285, -18.562172752964191 ] } },
+{ "type": "Feature", "properties": { "Latitude": -18.55138889, "Longitude": 27.0, "Name": "Dopota Primary", "Type": "School", "Activity": "70 students are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 27.006760286334998, -18.551399473988578 ] } },
+{ "type": "Feature", "properties": { "Latitude": -18.56666667, "Longitude": 27.08333333, "Name": "Mabale Primary", "Type": "School", "Activity": "50 students are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 27.079177266819233, -18.567243715300421 ] } },
+{ "type": "Feature", "properties": { "Latitude": -18.51666667, "Longitude": 26.96666667, "Name": "Lupote Primary", "Type": "School", "Activity": "65 students  are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 26.972812040754182, -18.510224076785498 ] } },
+{ "type": "Feature", "properties": { "Latitude": -18.5, "Longitude": 26.85, "Name": "Makwandara Secondary", "Type": "School", "Activity": "20 students are on the sponsorship program" }, "geometry": { "type": "Point", "coordinates": [ 26.847773667306697, -18.506432604907921 ] } },
+{ "type": "Feature", "properties": { "Latitude": -18.5, "Longitude": 26.91666667, "Name": "Damba Secondary", "Type": "School", "Activity": "15 students are on the sponsorship program" }, "geometry": { "type": "Point", "coordinates": [ 26.915014385608281, -18.491405391479784 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Lupote Secondary", "Type": "School", "Activity": "45 students are on the sponsorship program" }, "geometry": { "type": "Point", "coordinates": [ 26.978760334147147, -18.510954979958772 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Sianyanga Primary", "Type": "School", "Activity": "30 students are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 27.033633290189389, -18.496514958858029 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Sipepa Secondary", "Type": "School", "Activity": "15 students are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 27.654967183093486, -19.283041496640919 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Gwaai Primary", "Type": "School", "Activity": "30 students are on the sponsorship program and all leaners benefit from the school feeding program" }, "geometry": { "type": "Point", "coordinates": [ 27.681185782744375, -19.279779944501506 ] } }
+]
+}

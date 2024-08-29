@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "clubs",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Sonyathi Sewing Club", "Type": "Clubs" }, "geometry": { "type": "Point", "coordinates": [ 27.036419018047191, -18.559875735003352 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Dopota Sewing Club", "Type": "Clubs" }, "geometry": { "type": "Point", "coordinates": [ 27.010683933220538, -18.557000208386153 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Kulisumpula Sewing Club", "Type": "Clubs" }, "geometry": { "type": "Point", "coordinates": [ 27.036873847508943, -18.529500090710268 ] } }
+]
+}
