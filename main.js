@@ -1170,9 +1170,9 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
     map.addOverlay(clickoverlayborehole);
 
   const overlayboreholeName = document.getElementById('borehole-name-info');
-  const overlayboreholeType = document.getElementById('borehole-size-info');
-  const overlayboreholeDistrict = document.getElementById('borehole-district-info');
-  const overlayboreholeWard = document.getElementById('borehole-ward-info');
+  // const overlayboreholeType = document.getElementById('borehole-size-info');
+  const overlayboreholeDistrict = document.getElementById('borehole-location-info');
+  // const overlayboreholeWard = document.getElementById('borehole-ward-info');
   const overlayboreholeDescription = document.getElementById('borehole-description-info');
   const overlayboreholeImage = document.getElementById('borehole-image');
   
@@ -1181,18 +1181,18 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
     clickoverlayborehole.setPosition(undefined);
       map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
         let clickedCoordinate = e.coordinate;
-        let clickedboreholeName = feature.get('Names')
-        let cllickedboreholeType = feature.get('Type of work')  
-        let clickedboreholeDistict = feature.get('District')
-        let cllickedboreholeWard = feature.get('Ward')    
-        let cllickedboreholeDescription = feature.get('Program')  
-        let clickedboreholeImageURL = feature.get('imgUrl');
+        let clickedboreholeName = feature.get('Name')
+        // let cllickedboreholeType = feature.get('Type of work')  
+        let clickedboreholeLocation = feature.get('District')
+        // let cllickedboreholeWard = feature.get('Ward')    
+        let cllickedboreholeDescription = feature.get('Activity')  
+        let clickedboreholeImageURL = feature.get('Picture');
 
         clickoverlayborehole.setPosition(clickedCoordinate);
         overlayboreholeName.innerHTML = clickedboreholeName;
         overlayboreholeType.innerHTML = 'Type of Work: ' + cllickedboreholeType;
-        overlayboreholeDistrict.innerHTML = 'District: ' + clickedboreholeDistict;
-        overlayboreholeWard.innerHTML = 'Ward: ' + cllickedboreholeWard;
+        overlayboreholeLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District ';
+        // overlayboreholeWard.innerHTML = 'Ward: ' + cllickedboreholeWard;
         overlayboreholeDescription.innerHTML = cllickedboreholeDescription;
         overlayboreholeImage.src = clickedboreholeImageURL;
       },
