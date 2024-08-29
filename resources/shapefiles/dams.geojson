@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "dams",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Latitude": -18.55, "Longitude": 27.01666667, "Name": "Dopota", "Type": "Dam", "Activity": "Sabona worked with the community to scoop and raise the spillway of this dam. This has increased its water retention capacity providing water for livestock, gardening and brick moulding", "Picture": "./resources/images/dams/Dopota.jpg" }, "geometry": { "type": "Point", "coordinates": [ 27.009626165359123, -18.546309730517976 ] } }
+]
+}
