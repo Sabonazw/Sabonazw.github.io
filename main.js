@@ -1048,10 +1048,9 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
 
   const overlayGardenName = document.getElementById('garden-name-info');
   const overlayGardenType = document.getElementById('garden-type-info');
-  const overlayGardenDistrict = document.getElementById('garden-district-info');
-  
+  const overlayGardenDistrict = document.getElementById('garden-district-info');  
   const overlayGardenProject = document.getElementById('garden-project-info');
-  const overlayGardenImage = document.getElementById('garden-image');
+  const overlaygardenImage = document.getElementById('garden-image');
   
 
   map.on('pointermove', function(e){
@@ -1062,7 +1061,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
         let cllickedGardenType = feature.get('Type')  
         let clickedGardenLocation = feature.get('District')        
         let cllickedGardenProject = feature.get('Activity')  
-        let clickedGardenImageURL = feature.get('Picture');
+        let clickedgardenImageURL = feature.get('Picture');
 
         clickoverlaygardens.setPosition(clickedCoordinate);
           overlayGardenName.innerHTML = clickedGardenName+' '+cllickedGardenType;
@@ -1070,7 +1069,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
           overlayGardenType.innerHTML = cllickedGardenProject;
           overlayGardenWard.innerHTML = 'Ward: ' + cllickedGardenWard;
           overlayGardenProject.innerHTML = 'Project: ' + cllickedGardenProject;
-          overlayGardenImage.src = clickedGardenImageURL;
+          overlaygardenImage.src = clickedgardenImageURL;
       },
       {
         layerFilter: function(layerCandidate){
@@ -1083,43 +1082,43 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
     
 
 
-    //Woodlots Popup
-    const clickElementwoodlot = document.querySelector('.overlay-container-woodlot');
-    const clickoverlaywoodlot = new ol.Overlay({
-      element: clickElementwoodlot
+    //Clubs Popup
+    const clickElementclubs = document.querySelector('.overlay-container-clubs');
+    const clickoverlayclubs = new ol.Overlay({
+      element: clickElementclubs
       })
-      map.addOverlay(clickoverlaywoodlot);
+      map.addOverlay(clickoverlayclubs);
   
-    const overlaywoodlotName = document.getElementById('woodlot-name-info');
-    const overlaywoodlotSize = document.getElementById('woodlot-size-info');
-    const overlaywoodlotDistrict = document.getElementById('woodlot-district-info');
-    const overlaywoodlotWard = document.getElementById('woodlot-ward-info');
-    const overlaywoodlotDescription = document.getElementById('woodlot-description-info');
-    const overlaywoodlotImage = document.getElementById('woodlot-image');
+    const overlayclubsName = document.getElementById('clubs-name-info');
+    // const overlayclubsSize = document.getElementById('clubs-size-info');
+    const overlayclubslocation = document.getElementById('clubs-location-info');
+    // const overlayclubsWard = document.getElementById('clubs-ward-info');
+    const overlayclubsDescription = document.getElementById('clubs-description-info');
+    const overlayclubsImage = document.getElementById('clubs-image');
     
   
     map.on('pointermove', function(e){
-      clickoverlaywoodlot.setPosition(undefined);
+      clickoverlayclubs.setPosition(undefined);
         map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
           let clickedCoordinate = e.coordinate;
-          let clickedwoodlotName = feature.get('Names')
-          let cllickedwoodlotSize = feature.get('Size (sq m)')  
-          let clickedwoodlotDistict = feature.get('District')
-          let cllickedwoodlotWard = feature.get('Ward')    
-          let cllickedwoodlotDescription = feature.get('Type of trees planted')  
-          let clickedwoodlotImageURL = feature.get('imgUrl');
+          let clickedclubsName = feature.get('Name')
+          let clickedclubsSize = feature.get('Size (sq m)')  
+          let clickedclubsDistict = feature.get('District')
+          let clickedclubsWard = feature.get('Ward')    
+          let clickedclubsDescription = feature.get('Type of trees planted')  
+          let clickedclubsImageURL = feature.get('Picture');
   
-          clickoverlaywoodlot.setPosition(clickedCoordinate);
-          overlaywoodlotName.innerHTML = clickedwoodlotName;
-          overlaywoodlotSize.innerHTML = 'Size: ' + cllickedwoodlotSize;
-          overlaywoodlotDistrict.innerHTML = 'District: ' + clickedwoodlotDistict;
-          overlaywoodlotWard.innerHTML = 'Ward: ' + cllickedwoodlotWard;
-          overlaywoodlotDescription.innerHTML = cllickedwoodlotDescription;
-          overlaywoodlotImage.src = clickedwoodlotImageURL;
+          clickoverlayclubs.setPosition(clickedCoordinate);
+          overlayclubsName.innerHTML = clickedclubsName;
+          // overlayclubsSize.innerHTML = 'Size: ' + clickedclubsSize;
+          overlayclubslocation.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+          // overlayclubsWard.innerHTML = 'Ward: ' + clickedclubsWard;
+          overlayclubsDescription.innerHTML = clickedclubsDescription;
+          overlayclubsImage.src = clickedclubsImageURL;
         },
         {
           layerFilter: function(layerCandidate){
-            return layerCandidate.get('title') === 'woodlots';
+            return layerCandidate.get('title') === 'clubs';
           }
         })
       })
