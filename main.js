@@ -1040,43 +1040,43 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
           }
         })
       })            
-  const clickElementgardens = document.querySelector('.overlay-container-gardens');
-  const clickoverlaygardens = new ol.Overlay({
-    element: clickElementgardens
-    })
-    map.addOverlay(clickoverlaygardens);
+  // const clickElementgardens = document.querySelector('.overlay-container-gardens');
+  // const clickoverlaygardens = new ol.Overlay({
+  //   element: clickElementgardens
+  //   })
+  //   map.addOverlay(clickoverlaygardens);
 
-  const overlayGardenName = document.getElementById('garden-name-info');
-  const overlayGardenType = document.getElementById('garden-type-info');
-  const overlayGardenDistrict = document.getElementById('garden-district-info');  
-  const overlayGardenProject = document.getElementById('garden-project-info');
-  const overlaygardenImage = document.getElementById('garden-image');
+  // const overlayGardenName = document.getElementById('garden-name-info');
+  // const overlayGardenType = document.getElementById('garden-type-info');
+  // const overlayGardenDistrict = document.getElementById('garden-district-info');  
+  // const overlayGardenProject = document.getElementById('garden-project-info');
+  // const overlaygardenImage = document.getElementById('garden-image');
   
 
-  map.on('pointermove', function(e){
-    clickoverlaygardens.setPosition(undefined);
-      map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
-        let clickedCoordinate = e.coordinate;
-        let clickedGardenName = feature.get('Name')
-        let cllickedGardenType = feature.get('Type')  
-        let clickedGardenLocation = feature.get('District')        
-        let cllickedGardenProject = feature.get('Activity')  
-        let clickedgardenImageURL = feature.get('Picture');
+  // map.on('pointermove', function(e){
+  //   clickoverlaygardens.setPosition(undefined);
+  //     map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
+  //       let clickedCoordinate = e.coordinate;
+  //       let clickedGardenName = feature.get('Name')
+  //       let cllickedGardenType = feature.get('Type')  
+  //       let clickedGardenLocation = feature.get('District')        
+  //       let cllickedGardenProject = feature.get('Activity')  
+  //       let clickedgardenImageURL = feature.get('Picture');
 
-        clickoverlaygardens.setPosition(clickedCoordinate);
-          overlayGardenName.innerHTML = clickedGardenName+' '+cllickedGardenType;
-          overlayGardenDistrict.innerHTML = 'Ward 17, Mabale Area, Hwange District';
-          overlayGardenType.innerHTML = cllickedGardenProject;
-          overlayGardenWard.innerHTML = 'Ward: ' + cllickedGardenWard;
-          overlayGardenProject.innerHTML = 'Project: ' + cllickedGardenProject;
-          overlaygardenImage.src = clickedgardenImageURL;
-      },
-      {
-        layerFilter: function(layerCandidate){
-          return layerCandidate.get('title') === 'gardens';
-        }
-      })
-    });
+  //       clickoverlaygardens.setPosition(clickedCoordinate);
+  //         overlayGardenName.innerHTML = clickedGardenName+' '+cllickedGardenType;
+  //         overlayGardenDistrict.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+  //         overlayGardenType.innerHTML = cllickedGardenProject;
+  //         overlayGardenWard.innerHTML = 'Ward: ' + cllickedGardenWard;
+  //         overlayGardenProject.innerHTML = 'Project: ' + cllickedGardenProject;
+  //         overlaygardenImage.src = clickedgardenImageURL;
+  //     },
+  //     {
+  //       layerFilter: function(layerCandidate){
+  //         return layerCandidate.get('title') === 'gardens';
+  //       }
+  //     })
+  //   });
 
 
     
@@ -1105,7 +1105,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
           let clickedclubsSize = feature.get('Size (sq m)')  
           let clickedclubsDistict = feature.get('District')
           let clickedclubsWard = feature.get('Ward')    
-          let clickedclubsDescription = feature.get('Type of trees planted')  
+          let clickedclubsDescription = feature.get('Activity')  
           let clickedclubsImageURL = feature.get('Picture');
   
           clickoverlayclubs.setPosition(clickedCoordinate);
@@ -1122,7 +1122,46 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
           }
         })
       })
-
+    //clinics  Popup
+    const clickElementclinics = document.querySelector('.overlay-container-clinics');
+    const clickoverlayclinics = new ol.Overlay({
+      element: clickElementclinics
+      })
+      map.addOverlay(clickoverlayclinics);
+  
+    const overlayclinicsName = document.getElementById('clinics-name-info');
+    // const overlayclubsSize = document.getElementById('clubs-size-info');
+    const overlayclinicslocation = document.getElementById('clinics-location-info');
+    // const overlayclubsWard = document.getElementById('clubs-ward-info');
+    const overlayclinicsDescription = document.getElementById('clinics-description-info');
+    const overlayclinicsImage = document.getElementById('clinics-image');
+    
+  
+    map.on('pointermove', function(e){
+      clickoverlayclinics.setPosition(undefined);
+        map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
+          let clickedCoordinate = e.coordinate;
+          let clickedclinicsName = feature.get('Name')
+          let clickedclinicsSize = feature.get('Size (sq m)')  
+          let clickedclinicsDistict = feature.get('District')
+          let clickedclinicsWard = feature.get('Ward')    
+          let clickedclinicsDescription = feature.get('Activity')  
+          let clickedclubsImageURL = feature.get('Picture');
+  
+          clickoverlayclinics.setPosition(clickedCoordinate);
+          overlayclinicsName.innerHTML = clickedclinicsName;
+          // overlayclubsSize.innerHTML = 'Size: ' + clickedclubsSize;
+          overlayclinicslocation.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+          // overlayclubsWard.innerHTML = 'Ward: ' + clickedclubsWard;
+          overlayclinicsDescription.innerHTML = clickedclinicsDescription;
+          overlayclinicsImage.src = clickedclinicsImageURL;
+        },
+        {
+          layerFilter: function(layerCandidate){
+            return layerCandidate.get('title') === 'clinics';
+          }
+        })
+      })
   //Woodlots Popup
   const clickElementborehole = document.querySelector('.overlay-container-borehole');
   const clickoverlayborehole = new ol.Overlay({
