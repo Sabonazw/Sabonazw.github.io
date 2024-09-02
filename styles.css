@@ -435,6 +435,12 @@ ul li:hover a{
   height: 100%;
   object-fit: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
 }
+
+#borehole-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
+}
 /* CSS styles for the attribution image container */
 .attribution-image-container {
   width: 100px; /* Adjust the width as needed */

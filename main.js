@@ -1199,46 +1199,82 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
         })
       })
   //Woodlots Popup
+  // const clickElementborehole = document.querySelector('.overlay-container-borehole');
+  // const clickoverlayborehole = new ol.Overlay({
+  //   element: clickElementborehole
+  //   })
+  //   map.addOverlay(clickoverlayborehole);
+
+  // const overlayboreholeName = document.getElementById('borehole-name-info');
+  // // const overlayboreholeType = document.getElementById('borehole-size-info');
+  // const overlayboreholeDistrict = document.getElementById('borehole-location-info');
+  // // const overlayboreholeWard = document.getElementById('borehole-ward-info');
+  // const overlayboreholeDescription = document.getElementById('borehole-description-info');
+  // const overlayboreholeImage = document.getElementById('borehole-image');
+  
+
+  // map.on('pointermove', function(e){
+  //   clickoverlayborehole.setPosition(undefined);
+  //     map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
+  //       let clickedCoordinate = e.coordinate;
+  //       let clickedboreholeName = feature.get('Name')
+  //       // let cllickedboreholeType = feature.get('Type of work')  
+  //       let clickedboreholeLocation = feature.get('District')
+  //       // let cllickedboreholeWard = feature.get('Ward')    
+  //       let cllickedboreholeDescription = feature.get('Activity')  
+  //       let clickedboreholeImageURL = feature.get('Picture');
+
+  //       clickoverlayborehole.setPosition(clickedCoordinate);
+  //       overlayboreholeName.innerHTML = clickedboreholeName+  ' Borehole';
+  //       overlayboreholeType.innerHTML = 'Type of Work: ' + cllickedboreholeType;
+  //       overlayboreholeLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District ';
+  //       // overlayboreholeWard.innerHTML = 'Ward: ' + cllickedboreholeWard;
+  //       overlayboreholeDescription.innerHTML = cllickedboreholeDescription;
+  //       overlayboreholeImage.src = clickedboreholeImageURL;
+  //     },
+  //     {
+  //       layerFilter: function(layerCandidate){
+  //         return layerCandidate.get('title') === 'boreholes';
+  //       }
+  //     })
+  //   })  
   const clickElementborehole = document.querySelector('.overlay-container-borehole');
   const clickoverlayborehole = new ol.Overlay({
     element: clickElementborehole
-    })
-    map.addOverlay(clickoverlayborehole);
-
+  });
+  map.addOverlay(clickoverlayborehole);
+  
   const overlayboreholeName = document.getElementById('borehole-name-info');
   // const overlayboreholeType = document.getElementById('borehole-size-info');
-  const overlayboreholeDistrict = document.getElementById('borehole-location-info');
+  const overlayboreholeLocation = document.getElementById('borehole-location-info');
   // const overlayboreholeWard = document.getElementById('borehole-ward-info');
   const overlayboreholeDescription = document.getElementById('borehole-description-info');
   const overlayboreholeImage = document.getElementById('borehole-image');
   
-
-  map.on('pointermove', function(e){
+  map.on('pointermove', function(e) {
     clickoverlayborehole.setPosition(undefined);
-      map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
-        let clickedCoordinate = e.coordinate;
-        let clickedboreholeName = feature.get('Name')
-        // let cllickedboreholeType = feature.get('Type of work')  
-        let clickedboreholeLocation = feature.get('District')
-        // let cllickedboreholeWard = feature.get('Ward')    
-        let cllickedboreholeDescription = feature.get('Activity')  
-        let clickedboreholeImageURL = feature.get('Picture');
-
-        clickoverlayborehole.setPosition(clickedCoordinate);
-        overlayboreholeName.innerHTML = clickedboreholeName+  ' Borehole';
-        overlayboreholeType.innerHTML = 'Type of Work: ' + cllickedboreholeType;
-        overlayboreholeLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District ';
-        // overlayboreholeWard.innerHTML = 'Ward: ' + cllickedboreholeWard;
-        overlayboreholeDescription.innerHTML = cllickedboreholeDescription;
-        overlayboreholeImage.src = clickedboreholeImageURL;
-      },
-      {
-        layerFilter: function(layerCandidate){
-          return layerCandidate.get('title') === 'boreholes';
-        }
-      })
-    })  
-
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
+      let clickedCoordinate = e.coordinate;
+      let clickedboreholeName = feature.get('Name');
+      // let clickedboreholeType = feature.get('Type of work'); // Corrected typo
+      let clickedboreholeLocation = feature.get('District');
+      // let clickedboreholeWard = feature.get('Ward'); // Corrected typo
+      let cllickedboreholeDescription = feature.get('Activity');
+      let clickedboreholeImageURL = feature.get('Picture');
+  
+      clickoverlayborehole.setPosition(clickedCoordinate);
+      overlayboreholeName.innerHTML = clickedboreholeName + ' Borehole';
+      // overlayboreholeType.innerHTML = 'Type of Work: ' + clickedboreholeType; // Ensure 'borehole-size-info' element exists
+      overlayboreholeLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+      // overlayboreholeWard.innerHTML = 'Ward: ' + clickedboreholeWard; // Ensure 'borehole-ward-info' element exists
+      overlayboreholeDescription.innerHTML = cllickedboreholeDescription;
+      overlayboreholeImage.src = clickedboreholeImageURL;
+    }, {
+      layerFilter: function(layerCandidate) {
+        return layerCandidate.get('title') === 'boreholes';
+      }
+    });
+  });
 
 
 
