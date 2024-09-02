@@ -1077,7 +1077,43 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
   //       }
   //     })
   //   });
-
+  const clickElementgardens = document.querySelector('.overlay-container-gardens');
+  const clickoverlaygardens = new ol.Overlay({
+    element: clickElementgardens
+  });
+  map.addOverlay(clickoverlaygardens);
+  
+  const overlayGardenName = document.getElementById('garden-name-info');
+  const overlayGardenType = document.getElementById('garden-type-info');
+  const overlayGardenDistrict = document.getElementById('garden-district-info');
+  const overlayGardenProject = document.getElementById('garden-project-info');
+  const overlaygardenImage = document.getElementById('garden-image');
+  
+  map.on('pointermove', function(e) {
+    clickoverlaygardens.setPosition(undefined);
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
+      let clickedCoordinate = e.coordinate;
+      let clickedGardenName = feature.get('Name');
+      let clickedGardenType = feature.get('Type');
+      let clickedGardenLocation = feature.get('District');
+      let clickedGardenProject = feature.get('Activity');
+      let clickedgardenImageURL = feature.get('Picture'); // Ensure this property exists in your feature
+  
+      clickoverlaygardens.setPosition(clickedCoordinate);
+      overlayGardenName.innerHTML = clickedGardenName + ' ' + clickedGardenType;
+      overlayGardenDistrict.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+      overlayGardenType.innerHTML = clickedGardenProject;
+      // Ensure that 'garden-ward-info' element exists in your HTML
+      // const overlayGardenWard = document.getElementById('garden-ward-info');
+      // overlayGardenWard.innerHTML = 'Ward: ' + clickedGardenWard;
+      overlayGardenProject.innerHTML = 'Project: ' + clickedGardenProject;
+      overlaygardenImage.src = clickedgardenImageURL;
+    }, {
+      layerFilter: function(layerCandidate) {
+        return layerCandidate.get('title') === 'gardens';
+      }
+    });
+  });
 
     
 
