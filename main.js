@@ -1189,7 +1189,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
         let clickedboreholeImageURL = feature.get('Picture');
 
         clickoverlayborehole.setPosition(clickedCoordinate);
-        overlayboreholeName.innerHTML = clickedboreholeName;
+        overlayboreholeName.innerHTML = clickedboreholeName+  ' Borehole';
         overlayboreholeType.innerHTML = 'Type of Work: ' + cllickedboreholeType;
         overlayboreholeLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District ';
         // overlayboreholeWard.innerHTML = 'Ward: ' + cllickedboreholeWard;
