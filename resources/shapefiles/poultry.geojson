@@ -5,7 +5,8 @@
 "features": [
 { "type": "Feature", "properties": { "Latitude": -18.56805556, "Longitude": 27.01666667, "Name": "SDC", "Type": "Poultry", "Picture": ".\/resources\/images\/Poultry\/SDC.jpg", "Activity": "" }, "geometry": { "type": "Point", "coordinates": [ 27.023573607256569, -18.56482976409437 ] } },
 { "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Chiguswi Support Group", "Type": "Poultry", "Picture": ".\/resources\/images\/Poultry\/Chiguswi.jpg", "Activity": "" }, "geometry": { "type": "Point", "coordinates": [ 27.036710588508356, -18.529240654587163 ] } },
-{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Ukuthula Support Group", "Type": "Poultry", "Picture": ".\/resources\/images\/Poultry\/Ukuthula.jpg", "Activity": "" }, "geometry": { "type": "Point", "coordinates": [ 26.999630030791209, -18.552645763010673 ] } }
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Ukuthula Support Group", "Type": "Poultry", "Picture": ".\/resources\/images\/Poultry\/Ukuthula.jpg", "Activity": "" }, "geometry": { "type": "Point", "coordinates": [ 26.999630030791209, -18.552645763010673 ] } },
+{ "type": "Feature", "properties": { "Latitude": 0.0, "Longitude": 0.0, "Name": "Simunye Support Group", "Type": "Poultry", "Picture": ".\/resources\/images\/Poultry\/noImage.jpg", "Activity": "" }, "geometry": { "type": "Point", "coordinates": [ 27.032021, -18.561318 ] } }
 
 ]
 }

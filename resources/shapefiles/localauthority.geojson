@@ -3,7 +3,7 @@
 "name": "localauthority",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "id": null, "Name": "Lupane District Council", "Activity": "Implementing patner", "Picture": null, "District": "Lupane District , Zimbabwe" }, "geometry": { "type": "Point", "coordinates": [ 27.770385245785327, -18.933515130990337 ] } },
-{ "type": "Feature", "properties": { "id": null, "Name": "Hwange Rural District Council", "Activity": "Implementing Patner", "Picture": null, "District": "Hwange District, Matabeleland North" }, "geometry": { "type": "Point", "coordinates": [ 26.570180051882616, -18.349447182906495 ] } }
+{ "type": "Feature", "properties": { "id": null, "Name": "Lupane District Council", "Activity": "Implementing patner", "Picture": null, "District": "Lupane District , Zimbabwe", "Names": "Lupane RDC" }, "geometry": { "type": "Point", "coordinates": [ 27.770385245785327, -18.933515130990337 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Hwange Rural District Council", "Activity": "Implementing Patner", "Picture": null, "District": "Hwange District, Matabeleland North", "Names": "Hwange RDC" }, "geometry": { "type": "Point", "coordinates": [ 26.570180051882616, -18.349447182906495 ] } }
 ]
 }

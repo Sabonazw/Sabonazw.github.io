@@ -711,28 +711,28 @@ function createLabelStyle(feature, resolution) {
 
 
   // // Sand Dams layer
-  // const allprojectsGeojson = new ol.layer.VectorImage({
-  //   source: new ol.source.Vector({
-  //     url: './resources/shapefiles/all_projects.geojson',
-  //     format: new ol.format.GeoJSON()
-  //   }),
-  //   visible: false,
-  //   title: 'sandDams',
-  //   style: new ol.style.Style({
-  //     image:damMarkerStyle
-  //   }),
-  //   // Add the label style function
-  //   renderMode: 'image',
-  //   style: function (feature, resolution) {
-  //     return [
-  //       new ol.style.Style({
-  //         image:damMarkerStyle
-  //       }),
-  //       createLabelStyle(feature, resolution)
-  //     ];
-  //   }
+  const localauthorityGeojson = new ol.layer.VectorImage({
+    source: new ol.source.Vector({
+      url: './resources/shapefiles/localauthority.geojson',
+      format: new ol.format.GeoJSON()
+    }),
+    visible: false,
+    title: 'council',
+    style: new ol.style.Style({
+      image:damMarkerStyle
+    }),
+    // Add the label style function
+    renderMode: 'image',
+    style: function (feature, resolution) {
+      return [
+        new ol.style.Style({
+          image:damMarkerStyle
+        }),
+        createLabelStyle(feature, resolution)
+      ];
+    }
 
-  // })
+  })
 
   const clinicsGeojson = new ol.layer.VectorImage({
     source: new ol.source.Vector({
@@ -875,7 +875,7 @@ const schoolsGeoJSON = new ol.layer.VectorImage({
   const layerGroup = new ol.layer.Group({
     layers: [
        ZimbabweGeoJSON,wardsGeoJSON,semiAridGeoJSON,gardensGeoJSON,waterpointsGeoJSON, 
-       poultryGeoJSON,clubsGeoJSON, boreholeGeoJSON,schoolsGeoJSON,clinicsGeojson, 
+       poultryGeoJSON,clubsGeoJSON, boreholeGeoJSON,schoolsGeoJSON,clinicsGeojson, localauthorityGeojson,
     ]
   })
   map.addLayer(layerGroup);
