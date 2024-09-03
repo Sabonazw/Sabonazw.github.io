@@ -710,29 +710,29 @@ function createLabelStyle(feature, resolution) {
   //POINT LAYERS
 
 
-  // Sand Dams layer
-  const allprojectsGeojson = new ol.layer.VectorImage({
-    source: new ol.source.Vector({
-      url: './resources/shapefiles/all_projects.geojson',
-      format: new ol.format.GeoJSON()
-    }),
-    visible: false,
-    title: 'sandDams',
-    style: new ol.style.Style({
-      image:damMarkerStyle
-    }),
-    // Add the label style function
-    renderMode: 'image',
-    style: function (feature, resolution) {
-      return [
-        new ol.style.Style({
-          image:damMarkerStyle
-        }),
-        createLabelStyle(feature, resolution)
-      ];
-    }
+  // // Sand Dams layer
+  // const allprojectsGeojson = new ol.layer.VectorImage({
+  //   source: new ol.source.Vector({
+  //     url: './resources/shapefiles/all_projects.geojson',
+  //     format: new ol.format.GeoJSON()
+  //   }),
+  //   visible: false,
+  //   title: 'sandDams',
+  //   style: new ol.style.Style({
+  //     image:damMarkerStyle
+  //   }),
+  //   // Add the label style function
+  //   renderMode: 'image',
+  //   style: function (feature, resolution) {
+  //     return [
+  //       new ol.style.Style({
+  //         image:damMarkerStyle
+  //       }),
+  //       createLabelStyle(feature, resolution)
+  //     ];
+  //   }
 
-  })
+  // })
 
   const clinicsGeojson = new ol.layer.VectorImage({
     source: new ol.source.Vector({
@@ -808,7 +808,7 @@ const waterpointsGeoJSON = new ol.layer.VectorImage({
   style: new ol.style.Style({
     image:waterPointMarkerStyle
   }),
-  visible: true,
+  visible: false,
   title: 'dams'
 })
 
@@ -874,7 +874,7 @@ const schoolsGeoJSON = new ol.layer.VectorImage({
   // Thematic Layers Group
   const layerGroup = new ol.layer.Group({
     layers: [
-       ZimbabweGeoJSON,wardsGeoJSON,semiAridGeoJSON,gardensGeoJSON,waterpointsGeoJSON,allprojectsGeojson, 
+       ZimbabweGeoJSON,wardsGeoJSON,semiAridGeoJSON,gardensGeoJSON,waterpointsGeoJSON, 
        poultryGeoJSON,clubsGeoJSON, boreholeGeoJSON,schoolsGeoJSON,clinicsGeojson, 
     ]
   })
