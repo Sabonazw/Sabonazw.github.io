@@ -1338,6 +1338,43 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
     });
   });
 
+  const clickElementschools = document.querySelector('.overlay-container-schools');
+  const clickoverlayschools = new ol.Overlay({
+    element: clickElementschools
+  });
+  map.addOverlay(clickoverlayschools);
+  
+  const overlayschoolsName = document.getElementById('schools-name-info');
+  // const overlayboreholeType = document.getElementById('borehole-size-info');
+  const overlayschoolsLocation = document.getElementById('schools-location-info');
+  // const overlayboreholeWard = document.getElementById('borehole-ward-info');
+  const overlayschoolsDescription = document.getElementById('schools-description-info');
+  const overlayschoolsImage = document.getElementById('schools-image');
+  
+  map.on('pointermove', function(e) {
+    clickoverlayschools.setPosition(undefined);
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
+      let clickedCoordinate = e.coordinate;
+      let clickedschoolsName = feature.get('Name');
+      // let clickedboreholeType = feature.get('Type of work'); // Corrected typo
+      let clickedschoolsLocation = feature.get('District');
+      // let clickedboreholeWard = feature.get('Ward'); // Corrected typo
+      let cllickedschoolsDescription = feature.get('Activity');
+      let clickedschoolsImageURL = feature.get('Picture');
+  
+      clickoverlayschools.setPosition(clickedCoordinate);
+      overlayschoolsName.innerHTML = clickedschoolsName;
+      // overlayboreholeType.innerHTML = 'Type of Work: ' + clickedboreholeType; // Ensure 'borehole-size-info' element exists
+      overlayschoolsLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District'+clickedpoultryLocation;
+      // overlayboreholeWard.innerHTML = 'Ward: ' + clickedboreholeWard; // Ensure 'borehole-ward-info' element exists
+      overlayschoolsDescription.innerHTML = cllickedschoolsDescription;
+      overlayschoolsImage.src = clickedschoolsImageURL;
+    }, {
+      layerFilter: function(layerCandidate) {
+        return layerCandidate.get('title') === 'schools';
+      }
+    });
+  });
 
 
 

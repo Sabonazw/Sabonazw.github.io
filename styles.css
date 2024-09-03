@@ -351,7 +351,7 @@ ul li:hover a{
   margin: 0.5em;
   border-radius: 0.5em;
 }
-.overlay-container-ew,.overlay-container-poultry, .overlay-container-borehole, .overlay-container-gardens, .overlay-container-clubs, .overlay-container-catchment, .overlay-container-subcatchment,.overlay-container-clinics {
+.overlay-container-ew,.overlay-container-schools,.overlay-container-poultry, .overlay-container-borehole, .overlay-container-gardens, .overlay-container-clubs, .overlay-container-catchment, .overlay-container-subcatchment,.overlay-container-clinics {
   text-align: center;
   font-size:12px;
   font-family: "Helvetica Neue", Arial, sans-serif; /* Modern font family */
@@ -367,18 +367,18 @@ ul li:hover a{
 }
 
 /* Add a subtle text shadow for a modern look */
-.overlay-container-ew,.overlay-container-poultry,.overlay-container-borehole, .overlay-container-gardens, .overlay-container-clubs, .overlay-container-catchment, .overlay-container-subcatchment,.overlay-container-clinics {
+.overlay-container-ew,.overlay-container-schools,.overlay-container-poultry,.overlay-container-borehole, .overlay-container-gardens, .overlay-container-clubs, .overlay-container-catchment, .overlay-container-subcatchment,.overlay-container-clinics {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Add hover styles for an interactive effect */
-.overlay-container-ew:hover,.overlay-container-poultry:hover, .overlay-container-gardens:hover, .overlay-container-clubs:hover, .overlay-container-catchment:hover, .overlay-container-subcatchment:hover,.overlay-container-clinics:hover {
+.overlay-container-ew:hover,.overlay-container-schools:hover,.overlay-container-poultry:hover, .overlay-container-gardens:hover, .overlay-container-clubs:hover, .overlay-container-catchment:hover, .overlay-container-subcatchment:hover,.overlay-container-clinics:hover {
   background-color: rgba(245, 248, 252, 1); /* A different color with full opacity when hovering */
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Increased shadow when hovering */
 }
 
 /* Add hover styles for an interactive effect */
-.overlay-container-ew:hover, .overlay-container-gardens:hover,.overlay-container-poultry:hover, .overlay-container-clubs:hover, .overlay-container-catchment:hover, .overlay-container-subcatchment:hover,.overlay-container-clinics:hover {
+.overlay-container-ew:hover,.overlay-container-schools:hover, .overlay-container-gardens:hover,.overlay-container-poultry:hover, .overlay-container-clubs:hover, .overlay-container-catchment:hover, .overlay-container-subcatchment:hover,.overlay-container-clinics:hover {
   background-color: rgba(255, 188, 128, 0.8); /* A different color with 80% opacity when hovering */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly increased shadow when hovering */
 }
@@ -442,6 +442,12 @@ ul li:hover a{
   object-fit: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
 }
 #poultry-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
+}
+
+#schools-image {
   width: 100%;
   height: 100%;
   object-fit: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
