@@ -810,7 +810,7 @@ const waterpointsGeoJSON = new ol.layer.VectorImage({
 // })
 
 
-const poultyGeoJSON = new ol.layer.VectorImage({
+const poultryGeoJSON = new ol.layer.VectorImage({
   source: new ol.source.Vector({
     url: './resources/shapefiles/poultry.geojson',
     format: new ol.format.GeoJSON()
@@ -849,7 +849,7 @@ const schoolsGeoJSON = new ol.layer.VectorImage({
   const layerGroup = new ol.layer.Group({
     layers: [
        ZimbabweGeoJSON,wardsGeoJSON,semiAridGeoJSON,gardensGeoJSON,waterpointsGeoJSON,allprojectsGeojson, 
-       poultyGeoJSON,clubsGeoJSON, boreholeGeoJSON,schoolsGeoJSON,clinicsGeojson, 
+       poultryGeoJSON,clubsGeoJSON, boreholeGeoJSON,schoolsGeoJSON,clinicsGeojson, 
     ]
   })
   map.addLayer(layerGroup);
@@ -1178,16 +1178,16 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
         map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
           let clickedCoordinate = e.coordinate;
           let clickedclinicsName = feature.get('Name')
-          let clickedclinicsSize = feature.get('Size (sq m)')  
-          let clickedclinicsDistict = feature.get('District')
-          let clickedclinicsWard = feature.get('Ward')    
+          // let clickedclinicsSize = feature.get('Size (sq m)')  
+          let clickedclinicsLocation = feature.get('District')
+          // let clickedclinicsWard = feature.get('Ward')    
           let clickedclinicsDescription = feature.get('Activity')  
-          let clickedclubsImageURL = feature.get('Picture');
+          let clickedclinicsImageURL = feature.get('Picture');
   
           clickoverlayclinics.setPosition(clickedCoordinate);
           overlayclinicsName.innerHTML = clickedclinicsName;
           // overlayclubsSize.innerHTML = 'Size: ' + clickedclubsSize;
-          overlayclinicslocation.innerHTML = 'Ward 17, Mabale Area, Hwange District';
+          overlayclinicslocation.innerHTML = clickedclinicsLocation;
           // overlayclubsWard.innerHTML = 'Ward: ' + clickedclubsWard;
           overlayclinicsDescription.innerHTML = clickedclinicsDescription;
           overlayclinicsImage.src = clickedclinicsImageURL;
