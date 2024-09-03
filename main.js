@@ -417,12 +417,12 @@ const stamenToner = new ol.layer.Tile({
     
   });
 
-  const woodlotMarkerStyle = new ol.style.Icon({
-    src: './resources/icons/tree.png',
+  const clubsmarkerstyle = new ol.style.Icon({
+    src: './resources/icons/sew.png',
     size: [200, 200],
     offset: [0, 0],
     opacity: 1,
-    scale: 0.12,
+    scale: 0.5,
     color:'lime'
     
   });
@@ -442,13 +442,39 @@ const stamenToner = new ol.layer.Tile({
     size: [200, 200],
     offset: [0, 0],
     opacity: 1,
-    scale: 0.1,
+    scale: 0.15,
     color:'white'
     
   })
 
+  const poultryMarkerStyle = new ol.style.Icon({
+    src: './resources/icons/poultry.png',
+    size: [200, 200],
+    offset: [0, 0],
+    opacity: 1,
+    scale: 0.3,
+    color:'white'
+    
+  })
 
-
+  const schoolMarkerStyle = new ol.style.Icon({
+    src: './resources/icons/school.png',
+    size: [200, 200],
+    offset: [0, 0],
+    opacity: 1,
+    scale: 0.3,
+    color:'white'
+    
+  })
+  const clinicMarkerStyle = new ol.style.Icon({
+    src: './resources/icons/clinic.png',
+    size: [200, 200],
+    offset: [0, 0],
+    opacity: 1,
+    scale: 0.3,
+    color:'white'
+    
+  })
   // SUBCATCHMENT STYLE
   var getStyle = function (feature, resolution) {
     if (feature.get('Operational') =='yes') {
@@ -716,14 +742,14 @@ function createLabelStyle(feature, resolution) {
     visible: false,
     title: 'clinics',
     style: new ol.style.Style({
-      image:damMarkerStyle
+      image:clinicMarkerStyle
     }),
     // Add the label style function
     renderMode: 'image',
     style: function (feature, resolution) {
       return [
         new ol.style.Style({
-          image:damMarkerStyle
+          image:clinicMarkerStyle
         }),
         createLabelStyle(feature, resolution)
       ];
@@ -753,7 +779,7 @@ function createLabelStyle(feature, resolution) {
       format: new ol.format.GeoJSON()
     }),
     style: new ol.style.Style({
-      image:woodlotMarkerStyle
+      image:clubsmarkerstyle
     }),
     visible: false,
     title: 'clubs'
@@ -816,7 +842,7 @@ const poultryGeoJSON = new ol.layer.VectorImage({
     format: new ol.format.GeoJSON()
   }),
   style: new ol.style.Style({
-    image:gabionsMarkerStyle
+    image:poultryMarkerStyle
   }),
   visible: false,
   title: 'poultry'
@@ -827,7 +853,7 @@ const schoolsGeoJSON = new ol.layer.VectorImage({
     format: new ol.format.GeoJSON()
   }),
   style: new ol.style.Style({
-    image:gabionsMarkerStyle
+    image:schoolMarkerStyle
   }),
   visible: false,
   title: 'schools'
@@ -1086,7 +1112,6 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
   const overlayGardenName = document.getElementById('garden-name-info');
   const overlayGardenType = document.getElementById('garden-type-info');
   const overlayGardenDistrict = document.getElementById('garden-district-info');
-  const overlayGardenProject = document.getElementById('garden-project-info');
   const overlaygardenImage = document.getElementById('garden-image');
   
   map.on('pointermove', function(e) {
@@ -1094,19 +1119,17 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
     map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
       let clickedCoordinate = e.coordinate;
       let clickedGardenName = feature.get('Name');
-      let clickedGardenType = feature.get('Type');
+      let clickedGardenType = feature.get('Activity');
       let clickedGardenLocation = feature.get('District');
-      let clickedGardenProject = feature.get('Activity');
       let clickedgardenImageURL = feature.get('Picture'); // Ensure this property exists in your feature
   
       clickoverlaygardens.setPosition(clickedCoordinate);
       overlayGardenName.innerHTML = clickedGardenName + ' ' + clickedGardenType;
       overlayGardenDistrict.innerHTML = 'Ward 17, Mabale Area, Hwange District';
-      overlayGardenType.innerHTML = clickedGardenProject;
+      overlayGardenType.innerHTML = clickedGardenType;
       // Ensure that 'garden-ward-info' element exists in your HTML
       // const overlayGardenWard = document.getElementById('garden-ward-info');
       // overlayGardenWard.innerHTML = 'Ward: ' + clickedGardenWard;
-      overlayGardenProject.innerHTML = 'Project: ' + clickedGardenProject;
       overlaygardenImage.src = clickedgardenImageURL;
     }, {
       layerFilter: function(layerCandidate) {
@@ -1277,35 +1300,48 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
   });
 
 
+  const clickElementpoultry = document.querySelector('.overlay-container-poultry');
+  const clickoverlaypoultry = new ol.Overlay({
+    element: clickElementpoultry
+  });
+  map.addOverlay(clickoverlaypoultry);
+  
+  const overlaypoultryName = document.getElementById('poultry-name-info');
+  // const overlayboreholeType = document.getElementById('borehole-size-info');
+  const overlaypoultryLocation = document.getElementById('poultry-location-info');
+  // const overlayboreholeWard = document.getElementById('borehole-ward-info');
+  const overlaypoultryDescription = document.getElementById('poultry-description-info');
+  const overlaypoultryImage = document.getElementById('poultry-image');
+  
+  map.on('pointermove', function(e) {
+    clickoverlaypoultry.setPosition(undefined);
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
+      let clickedCoordinate = e.coordinate;
+      let clickedpoultryName = feature.get('Name');
+      // let clickedboreholeType = feature.get('Type of work'); // Corrected typo
+      let clickedpoultryLocation = feature.get('District');
+      // let clickedboreholeWard = feature.get('Ward'); // Corrected typo
+      let cllickedpoultryDescription = feature.get('Activity');
+      let clickedpoultryImageURL = feature.get('Picture');
+  
+      clickoverlaypoultry.setPosition(clickedCoordinate);
+      overlaypoultryName.innerHTML = clickedpoultryName;
+      // overlayboreholeType.innerHTML = 'Type of Work: ' + clickedboreholeType; // Ensure 'borehole-size-info' element exists
+      overlaypoultryLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District'+clickedpoultryLocation;
+      // overlayboreholeWard.innerHTML = 'Ward: ' + clickedboreholeWard; // Ensure 'borehole-ward-info' element exists
+      overlaypoultryDescription.innerHTML = cllickedpoultryDescription;
+      overlaypoultryImage.src = clickedpoultryImageURL;
+    }, {
+      layerFilter: function(layerCandidate) {
+        return layerCandidate.get('title') === 'poultry';
+      }
+    });
+  });
 
 
 
 
 
-
-
-    const clickElementSport = document.querySelector('.overlay-container-sport');
-    const clickoverlaySport = new ol.Overlay({
-    element: clickElementSport
-    })
-    map.addOverlay(clickoverlaySport);
-    const overlaysport = document.getElementById('sport-facility-info');
-    map.on('click', function(e){
-      clickoverlaySport.setPosition(undefined);
-        map.forEachFeatureAtPixel(e.pixel, function(feature, layer){
-          let clickedCoordinate = e.coordinate;
-          let clickedSport = feature.get('PROVINCE')    
-          if(clickedSport != undefined){
-            clickoverlaySport.setPosition(clickedCoordinate);
-            overlaysport.innerHTML = clickedSport;
-         }
-        },
-        {
-          layerFilter: function(layerCandidate){
-            return layerCandidate.get('title') === 'wards';
-          }
-        })
-      });
   
     const selectInteractionV2 = new ol.interaction.Select();
     map.addInteraction(selectInteractionV2);
