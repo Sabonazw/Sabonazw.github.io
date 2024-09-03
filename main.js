@@ -1327,7 +1327,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
       clickoverlaypoultry.setPosition(clickedCoordinate);
       overlaypoultryName.innerHTML = clickedpoultryName;
       // overlayboreholeType.innerHTML = 'Type of Work: ' + clickedboreholeType; // Ensure 'borehole-size-info' element exists
-      overlaypoultryLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District'+clickedpoultryLocation;
+      overlaypoultryLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District';
       // overlayboreholeWard.innerHTML = 'Ward: ' + clickedboreholeWard; // Ensure 'borehole-ward-info' element exists
       overlaypoultryDescription.innerHTML = cllickedpoultryDescription;
       overlaypoultryImage.src = clickedpoultryImageURL;
