@@ -1365,7 +1365,7 @@ const clickElementECW = document.querySelector('.overlay-container-ew');
       clickoverlayschools.setPosition(clickedCoordinate);
       overlayschoolsName.innerHTML = clickedschoolsName;
       // overlayboreholeType.innerHTML = 'Type of Work: ' + clickedboreholeType; // Ensure 'borehole-size-info' element exists
-      overlayschoolsLocation.innerHTML = 'Ward 17, Mabale Area, Hwange District'+clickedpoultryLocation;
+      overlayschoolsLocation.innerHTML = clickedschoolsLocation;
       // overlayboreholeWard.innerHTML = 'Ward: ' + clickedboreholeWard; // Ensure 'borehole-ward-info' element exists
       overlayschoolsDescription.innerHTML = cllickedschoolsDescription;
       overlayschoolsImage.src = clickedschoolsImageURL;
